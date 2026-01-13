@@ -33,7 +33,7 @@ void loop() {
     if (!(currtouched & _BV(i)) && (lasttouched & _BV(i)) ) {
       
       Serial.print(i); 
-      Serial.print(">"); 
+      Serial.print(":"); 
       Serial.println("1");
       //delay(1);
     }
