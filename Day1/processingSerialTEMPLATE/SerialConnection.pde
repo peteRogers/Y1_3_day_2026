@@ -6,10 +6,11 @@ void serialEvent(Serial p) {
   if (inString.length() == 0) return;
   String[] sensorArray = split(inString, ':');
   if (sensorArray == null || sensorArray.length < 2) return;
-  int address, value;
+  int address;
+  float value;
   try {
     address = Integer.parseInt(sensorArray[0]);
-    value   = Integer.parseInt(sensorArray[1]);
+    value   = Float.parseFloat(sensorArray[1]);
   } catch (Exception e) {
     return; // not valid integers
   }

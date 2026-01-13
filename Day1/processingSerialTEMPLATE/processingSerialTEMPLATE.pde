@@ -1,6 +1,6 @@
 import processing.serial.*;
 Serial myPort;
-int[] arduinoValues = new int[8];
+Float[] arduinoValues = new Float[8];
 
 
 void setup() {
@@ -21,5 +21,5 @@ void draw() {
   strokeWeight(50);
   background(0);
   //line(0,0, arduinoValues[0], arduinoValues[1]);
-  //drawInterface();
+  drawInterface();
 }
