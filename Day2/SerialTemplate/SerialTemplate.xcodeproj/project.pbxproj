@@ -6,7 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2F60CBCB2F1F82D500EDE2F5 /* stainWindow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F60CBCA2F1F82D500EDE2F5 /* stainWindow.png */; };
+		2F60CBCC2F1F82D500EDE2F5 /* Kaleidoscope.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CBC92F1F82D500EDE2F5 /* Kaleidoscope.metal */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		2F60CBC92F1F82D500EDE2F5 /* Kaleidoscope.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kaleidoscope.metal; sourceTree = "<group>"; };
+		2F60CBCA2F1F82D500EDE2F5 /* stainWindow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stainWindow.png; sourceTree = "<group>"; };
 		2FD558D32EBB835C00423216 /* SerialTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SerialTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +39,8 @@
 		2FD558CA2EBB835C00423216 = {
 			isa = PBXGroup;
 			children = (
+				2F60CBC92F1F82D500EDE2F5 /* Kaleidoscope.metal */,
+				2F60CBCA2F1F82D500EDE2F5 /* stainWindow.png */,
 				2FD558D52EBB835C00423216 /* SerialTemplate */,
 				2FD558D42EBB835C00423216 /* Products */,
 			);
@@ -109,6 +118,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F60CBCB2F1F82D500EDE2F5 /* stainWindow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F60CBCC2F1F82D500EDE2F5 /* Kaleidoscope.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

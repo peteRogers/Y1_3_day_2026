@@ -22,7 +22,8 @@ import Observation
     
     func receiveArduinoValues(values: [Int:Float]){
         if let v0 = values[0] {
-            val0 = v0 / 1024.0
+           // val0 = v0 / 1024.0
+            val0 = v0
         }
         if let v1 = values[1] {
             val1 = v1 / 1024.0
