@@ -13,6 +13,7 @@ struct ContentView: View {
         VStack {
             
             Text("\(serialModel.val0)")
+            Text("\(serialModel.val1)")
            
         }
         

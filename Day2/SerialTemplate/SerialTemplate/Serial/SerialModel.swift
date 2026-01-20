@@ -10,6 +10,7 @@ import Observation
 @Observable class SerialModel {
     var serial: SerialManager?
     var val0:Float = 0.0
+    var val1:Float = 0.0
     
     
     func startSerial(){
@@ -22,6 +23,9 @@ import Observation
     func receiveArduinoValues(values: [Int:Float]){
         if let v0 = values[0] {
             val0 = v0 / 1024.0
+        }
+        if let v1 = values[1] {
+            val1 = v1 / 1024.0
         }
     }
     
