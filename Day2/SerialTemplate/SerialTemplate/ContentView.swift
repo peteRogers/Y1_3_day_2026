@@ -16,7 +16,7 @@ struct ContentView: View {
             Circle()
                        .fill(.blue)
                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                       .scaleEffect(CGFloat(serialModel.val0))
+                       .scaleEffect(CGFloat(serialModel.val0/1024.0))
                        
            
         }

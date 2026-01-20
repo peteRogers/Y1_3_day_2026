@@ -23,8 +23,8 @@ struct ContentViewShader: View {
                             .float2(geo.size.width, geo.size.height),
                             .float2(0, 0),
                             .float(10), //how many segments
-                            .float((serialModel.val0/256.0) / .pi), //rotation
-                            .float((serialModel.val0/1024.0)+1)//scale
+                            .float((serialModel.val0/64.0) / .pi), //rotation
+                            .float((serialModel.val0/256.0)+1)//scale
                         ),
                         maxSampleOffset: CGSize(
                             width: geo.size.width/2,
