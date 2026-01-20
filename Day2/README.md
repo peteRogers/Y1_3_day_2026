@@ -68,6 +68,63 @@
         }.ignoresSafeArea(edges: .all)
 ```
 ---
+## Mapkit with arduino 
+```swift
+import SwiftUI
+import MapKit
+
+struct ContentView: View {
+    @State private var serialModel = SerialModel()
+    var body: some View {
+        VStack {
+            
+          //  Text("\(serialModel.val0)")
+//            Circle()
+//                       .fill(.blue)
+//                       .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                       .scaleEffect(CGFloat(serialModel.val0/1024.0))
+            TimelineView(.animation) { timeline in
+                let time = timeline.date.timeIntervalSinceReferenceDate
+                let spinDeg = (time * 12).truncatingRemainder(dividingBy: 360)
+                // Make the camera glide in a tiny circle around Lewisham
+                let radius = 0.0008
+                let dx = radius * cos(time * 0.008)
+                let dy = radius * sin(time * 0.008)
+                let center = CLLocationCoordinate2D(latitude: -33.8523 + dy, longitude: 151.2108 + dx)
+                let camera = MapCamera(
+                    centerCoordinate: center,
+                    distance: 2000,   // zoom level (meters). Increase to zoom out
+                    heading: spinDeg,
+                    pitch: Double(serialModel.val0))
+                ZStack {
+                    Map(position: .constant(.camera(camera))) {
+                        // You can add content here, e.g. Marker(), UserAnnotation(), etc.
+                    }
+                    .mapStyle(.imagery(elevation: .realistic))
+                    .allowsHitTesting(false)
+                    .disabled(true)
+                }
+            }
+                // Compute a smooth, looping time value
+        
+    
+                       
+           
+        }
+        
+        
+        .onAppear {
+            serialModel.startSerial()
+        }
+    }
+}
+
+#Preview {
+    ContentView()
+}
+```
+
+---
 ## RealityView
 ```swift
  RealityView { content in
