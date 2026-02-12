@@ -1,3 +1,21 @@
+import processing.serial.*;
+
+Serial myPort;
+Float[] arduinoValues;
+
+void startSerial(int portnumber, int sensors){
+  printArray(Serial.list());
+  try {
+    myPort = new Serial(this, Serial.list()[portnumber], 9600);
+  }
+  catch(Exception e) {
+    println(e);
+  }
+   arduinoValues = new Float[sensors];
+   for(int i = 0; i < sensors; i ++){
+     arduinoValues[i] = 0.0;
+   }
+}
 
 void serialEvent(Serial p) {
   String inString = p.readStringUntil('\n');

@@ -1,17 +1,7 @@
-import processing.serial.*;
-Serial myPort;
-Float[] arduinoValues = new Float[8];
-
 
 void setup() {
   size(1024, 1024);
-  printArray(Serial.list());
-  try {
-    myPort = new Serial(this, Serial.list()[5], 9600);
-  }
-  catch(Exception e) {
-    println(e);
-  }
+  startSerial(5, 1);
 }
 
 
