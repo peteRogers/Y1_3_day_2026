@@ -10,6 +10,9 @@ void draw() {
   stroke(255);
   strokeWeight(50);
   background(0);
-  //line(0,0, arduinoValues[0], arduinoValues[1]);
   drawInterface();
+  if(pinPressed(0) == true){
+    text("foofoofoof", 300,300);
+  } 
+  updateValues();
 }

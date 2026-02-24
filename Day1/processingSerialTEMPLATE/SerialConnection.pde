@@ -2,6 +2,7 @@ import processing.serial.*;
 
 Serial myPort;
 Float[] arduinoValues;
+Float[] preValues;
 
 void startSerial(int portnumber, int sensors){
   printArray(Serial.list());
@@ -12,8 +13,10 @@ void startSerial(int portnumber, int sensors){
     println(e);
   }
    arduinoValues = new Float[sensors];
+   preValues = new Float[sensors];
    for(int i = 0; i < sensors; i ++){
      arduinoValues[i] = 0.0;
+     preValues[i] = 0.0;
    }
 }
 
@@ -33,10 +36,26 @@ void serialEvent(Serial p) {
     return; // not valid integers
   }
   if (address < 0 || address >= arduinoValues.length) return;
-  arduinoValues[address] = value;
+    arduinoValues[address] = value;
+  
 }
 
+Boolean pinPressed(int i){
+  if(arduinoValues[i] == 1.0){
+  if(arduinoValues[i] != preValues[i]){
+      return true;
+    }
+  }
+  return false;
+}
 
+void updateValues(){
+  for(int i = 0; i < arduinoValues.length; i ++){
+    if(arduinoValues[i] != preValues[i]){
+      preValues[i] = arduinoValues[i];
+    }
+  }
+}
 void drawInterface() {
   int panelW = 150;
   int lineH  = 25;
@@ -50,7 +69,7 @@ void drawInterface() {
 
   for (int i = 0; i < arduinoValues.length; i++) {
     text(
-      "Input " + i + ": " + arduinoValues[i],
+      "Input " + i + ": " + arduinoValues[i] + ": "+preValues[i],
       10,
       padding + i * lineH
     );
