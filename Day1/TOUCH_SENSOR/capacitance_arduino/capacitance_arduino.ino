@@ -27,14 +27,14 @@ void loop() {
      
       Serial.print(i); 
       Serial.print(":"); 
-      Serial.println("0");
+      Serial.println("1");
       //delay(1);
     }
     if (!(currtouched & _BV(i)) && (lasttouched & _BV(i)) ) {
       
       Serial.print(i); 
       Serial.print(":"); 
-      Serial.println("1");
+      Serial.println("0");
       //delay(1);
     }
   }
