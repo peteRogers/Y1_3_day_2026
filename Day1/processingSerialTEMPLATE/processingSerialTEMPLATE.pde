@@ -11,7 +11,7 @@ void draw() {
   strokeWeight(50);
   background(0);
   drawInterface();
-  if(pinPressed(0) == true){
+  if(isReleased(0) == true){
     text("foofoofoof", 300,300);
   } 
   updateValues();

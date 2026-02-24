@@ -40,13 +40,33 @@ void serialEvent(Serial p) {
   
 }
 
-Boolean pinPressed(int i){
+Boolean isPressed(int i){
   if(arduinoValues[i] == 1.0){
   if(arduinoValues[i] != preValues[i]){
       return true;
     }
   }
   return false;
+}
+
+Boolean isReleased(int i){
+  if(arduinoValues[i] == 0.0){
+  if(arduinoValues[i] != preValues[i]){
+      return true;
+    }
+  }
+  return false;
+}
+
+Boolean isChanged(int i){
+  if(arduinoValues[i] != preValues[i]){
+      return true;
+  }
+  return false;
+}
+
+float getValue(int i){
+  return arduinoValues[i];
 }
 
 void updateValues(){
